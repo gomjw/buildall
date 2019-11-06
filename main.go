@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"github.com/gomjw/color"
 )
 
 var platforms = []string{
@@ -60,6 +61,9 @@ func main() {
 
 }
 
+var blue = color.New(color.FgCyan).SprintFunc()
+var magenta = color.New(color.FgMagenta).SprintFunc()
+
 func build(n int) {
 	dir, _ := os.Getwd()
 	dir = filepath.Base(dir)
@@ -71,7 +75,7 @@ func build(n int) {
 	goos := strings.Split(element, "/")[0]
 	goarch := strings.Split(element, "/")[1]
 
-	fmt.Printf("Building: %s - %s\n", goos, goarch)
+	fmt.Printf("%s: %s - %s\n", magenta("Building"), blue(goos), blue(goarch))
 
 	switch goos {
 	case "windows":
@@ -82,7 +86,9 @@ func build(n int) {
 	cmd.Env = append(os.Environ(), "GOOS="+goos, "GOARCH="+goarch)
 
 	if err := cmd.Run(); err != nil {
-		log.Fatal(err)
+		color.Red("Could not build: %s - %s.", goos, goarch)
+		color.Red("You probably used code which is not compatible with this platform!")
+		color.Red("Error: %s", err.Error())
 	}
 
 	wg.Done()
