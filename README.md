@@ -13,6 +13,12 @@ go get github.com/gomjw/buildall
 go install github.com/gomjw/buildall
 ```
 
+## Update
+
+```bash
+go get -u github.com/gomjw/buildall
+```
+
 ## Usage
 
 ```bash
