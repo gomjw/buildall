@@ -75,10 +75,10 @@ func build(n int) {
 
 	switch goos {
 	case "windows":
-		ext = "exe"
+		ext = ".exe"
 	}
 
-	cmd := exec.Command("go", "build", "-o", "./build/"+dir+"_"+goos+"_"+goarch+"."+ext)
+	cmd := exec.Command("go", "build", "-o", "./build/"+dir+"_"+goos+"_"+goarch+ext)
 	cmd.Env = append(os.Environ(), "GOOS="+goos, "GOARCH="+goarch)
 
 	if err := cmd.Run(); err != nil {
