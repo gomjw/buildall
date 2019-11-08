@@ -1,26 +1,5 @@
-# buildall
+---
 
-> Builds your project for all platforms that go supports.
-
-## Install using the precompiled binaries
-
-You can run the program from our precompiled binaries at the [releases](https://github.com/gomjw/buildall/releases) tab.
-
-## Install from source
-
-```bash
-go get github.com/gomjw/buildall
-go install github.com/gomjw/buildall
-```
-
-## Update
-
-```bash
-go get -u github.com/gomjw/buildall
-```
-
-## Usage
-
-```bash
-buildall
-```
+> Made by the awesome contributors of [@gomjw](https://github.com/gomjw) &nbsp;&middot;&nbsp;
+> Maintainer [@MarvinJWendt](https://github.com/MarvinJWendt) &nbsp;&middot;&nbsp;
+> Readme template version: 1.0.0
