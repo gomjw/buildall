@@ -1,16 +1,16 @@
-# gomjw-buildall
+# buildall
 
 
 ## Install
 
 ```console
-go get -u github.com/gomjw/gomjw-buildall
+go get -u github.com/gomjw/buildall
 ```
 
 ## Usage
 
 ```console
-gomjw-buildall -help
+buildall -help
 ```
 
 
